@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'user.welcome');
+
+Route::post('/', [ContactController::class, 'store'])->name('user.contact');

@@ -134,21 +134,27 @@
               <h2 id="hire" class="secondary-title">Hire me</h2>
               <p class="section-paragraph">Feel free to to contact me any time, through any method below.</p>
               <div class="w-full grid lg:grid-cols-2 gap-8 lg:gap-32 mt-24">
-              <div class="space-y-12">
-                  <div>
-                      <label for="" class="text-white block mb-6 text-xl font-bold">Name</label>
-                      <input type="text" class="w-full border border-input-border bg-input px-4 py-4 p-16 ">
+              
+                <form action="{{ route('user.contact') }}" method="post">
+                  @csrf
+                  <div class="space-y-12">
+                    <div>
+                        <label for="" class="text-white block mb-6 text-xl font-bold">Name</label>
+                        <input type="text" name="name" class="w-full border border-input-border bg-input px-4 py-4 p-16 " required>
+                    </div>
+                    <div>
+                        <label for="" class="text-white block mb-6 text-xl font-bold">Email</label>
+                        <input type="email" name="email" class="w-full border border-input-border bg-input px-4 py-4 p-16 " required>
+                    </div>
+                    <div>
+                        <label for="" class="text-white block mb-6 text-xl font-bold">Message</label>
+                        <textarea type="text" name="message" class="w-full border border-input-border bg-input px-4 py-4 p-16 " cols="30" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="px-6 py-2 bg-theme text-white font-bold">Send it!</button>
                   </div>
-                  <div>
-                      <label for="" class="text-white block mb-6 text-xl font-bold">Email</label>
-                      <input type="email" class="w-full border border-input-border bg-input px-4 py-4 p-16 ">
-                  </div>
-                  <div>
-                      <label for="" class="text-white block mb-6 text-xl font-bold">Message</label>
-                      <textarea type="email" class="w-full border border-input-border bg-input px-4 py-4 p-16 " name="" id="" cols="30" rows="5"></textarea>
-                  </div>
-                  <button class="px-6 py-2 bg-theme text-white font-bold">Send it!</button>
-                </div>
+                </form>
+
+                @include('inc.message')
 
                 <div class="mt-12">
                     <!-- Contact info -->
