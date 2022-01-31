@@ -63,3 +63,7 @@ body {
 .nav-dot:hover span {
     opacity: 1;
 }
+
+.visitweb {
+    @apply text-blue-600 my-6 w-full max-w-3xl underline leading-none;
+}
